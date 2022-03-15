@@ -55,3 +55,17 @@ def find_attractions(destination, interests):
                 attractions_with_interest.append(possible_attraction[0])
     return attractions_with_interest
 
+
+#see the parts of a city you want to see
+def get_attractions_for_traveler(traveler):
+    traveler_destination = traveler[1]
+    traveler_interests = traveler[2]
+    traveler_name = traveler[0]
+    traveler_attractions = find_attractions(traveler_destination, traveler_interests)
+    attractions = str(traveler_attractions)[1:-1]
+    interests_string = "Hi " + str(traveler_name) + ", we think you'll like these places around " + traveler_destination + ": " + attractions
+    return interests_string
+
+print("")
+smills_france = get_attractions_for_traveler(['Dereck Smill', 'Paris, France', ['monument']])
+print(smills_france)
